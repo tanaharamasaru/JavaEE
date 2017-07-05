@@ -1,0 +1,195 @@
+@startuml
+annotation java.lang.Override
+annotation javax.ejb.EJB
+annotation javax.ejb.LocalBean
+annotation javax.ejb.Stateless
+annotation javax.enterprise.context.RequestScoped
+annotation javax.enterprise.context.SessionScoped
+annotation javax.inject.Inject
+annotation javax.inject.Named
+annotation javax.persistence.Basic
+annotation javax.persistence.Column
+annotation javax.persistence.Entity
+annotation javax.persistence.GeneratedValue
+annotation javax.persistence.Id
+annotation javax.persistence.JoinColumn
+annotation javax.persistence.ManyToOne
+annotation javax.persistence.NamedQueries
+annotation javax.persistence.NamedQuery
+annotation javax.persistence.OneToMany
+annotation javax.persistence.PersistenceContext
+annotation javax.persistence.Table
+annotation javax.persistence.Temporal
+annotation javax.validation.constraints.NotNull
+annotation javax.validation.constraints.Size
+annotation javax.xml.bind.annotation.XmlRootElement
+annotation javax.xml.bind.annotation.XmlTransient
+class ejb.LoginSessionBean
+class ejb.OrderSessionBean
+class ejb.ProductListSessionBean
+class entity.Category
+class entity.OrderDetail
+class entity.Orders
+class entity.Product
+class entity.ProductBean
+class entity.Users
+class java.util.ArrayList
+class java.util.Collection
+class java.util.Date
+class java.util.List
+class java.util.Map
+class javax.faces.application.FacesMessage
+class javax.faces.context.FacesContext
+class javax.persistence.CascadeType
+class javax.persistence.EntityManager
+class javax.persistence.GenerationType
+class javax.persistence.Query
+class javax.persistence.TemporalType
+class test.backingbean.LoginBackingBean
+class test.backingbean.OrderBackingBean
+class test.backingbean.ProductListBackingBean
+interface java.io.Serializable
+ejb.LoginSessionBean ..> javax.ejb.LocalBean
+ejb.LoginSessionBean ..> javax.ejb.Stateless
+ejb.LoginSessionBean ..> javax.persistence.PersistenceContext
+ejb.LoginSessionBean ..> entity.Users
+ejb.LoginSessionBean ..> javax.persistence.EntityManager
+ejb.OrderSessionBean ..> javax.ejb.LocalBean
+ejb.OrderSessionBean ..> javax.ejb.Stateless
+ejb.OrderSessionBean ..> javax.persistence.PersistenceContext
+ejb.OrderSessionBean ..> entity.OrderDetail
+ejb.OrderSessionBean ..> entity.Orders
+ejb.OrderSessionBean ..> javax.persistence.EntityManager
+ejb.ProductListSessionBean ..> javax.ejb.LocalBean
+ejb.ProductListSessionBean ..> javax.ejb.Stateless
+ejb.ProductListSessionBean ..> javax.persistence.PersistenceContext
+ejb.ProductListSessionBean ..> entity.Product
+ejb.ProductListSessionBean ..> entity.Users
+ejb.ProductListSessionBean ..> java.util.List
+ejb.ProductListSessionBean ..> javax.persistence.EntityManager
+ejb.ProductListSessionBean ..> javax.persistence.Query
+entity.Category ..> java.lang.Override
+entity.Category ..> javax.persistence.Basic
+entity.Category ..> javax.persistence.Column
+entity.Category ..> javax.persistence.Entity
+entity.Category ..> javax.persistence.Id
+entity.Category ..> javax.persistence.NamedQueries
+entity.Category ..> javax.persistence.NamedQuery
+entity.Category ..> javax.persistence.OneToMany
+entity.Category ..> javax.persistence.Table
+entity.Category ..> javax.validation.constraints.NotNull
+entity.Category ..> javax.validation.constraints.Size
+entity.Category ..> javax.xml.bind.annotation.XmlRootElement
+entity.Category ..> javax.xml.bind.annotation.XmlTransient
+entity.Category ..> java.util.Collection
+entity.Category ..> javax.persistence.CascadeType
+entity.Category --|> java.io.Serializable
+entity.OrderDetail ..> java.lang.Override
+entity.OrderDetail ..> javax.persistence.Basic
+entity.OrderDetail ..> javax.persistence.Column
+entity.OrderDetail ..> javax.persistence.Entity
+entity.OrderDetail ..> javax.persistence.GeneratedValue
+entity.OrderDetail ..> javax.persistence.Id
+entity.OrderDetail ..> javax.persistence.JoinColumn
+entity.OrderDetail ..> javax.persistence.ManyToOne
+entity.OrderDetail ..> javax.persistence.NamedQueries
+entity.OrderDetail ..> javax.persistence.NamedQuery
+entity.OrderDetail ..> javax.persistence.Table
+entity.OrderDetail ..> javax.persistence.Temporal
+entity.OrderDetail ..> javax.validation.constraints.NotNull
+entity.OrderDetail ..> javax.xml.bind.annotation.XmlRootElement
+entity.OrderDetail ..> java.util.Date
+entity.OrderDetail ..> javax.persistence.GenerationType
+entity.OrderDetail ..> javax.persistence.TemporalType
+entity.OrderDetail --|> java.io.Serializable
+entity.Orders ..> java.lang.Override
+entity.Orders ..> javax.persistence.Basic
+entity.Orders ..> javax.persistence.Column
+entity.Orders ..> javax.persistence.Entity
+entity.Orders ..> javax.persistence.GeneratedValue
+entity.Orders ..> javax.persistence.Id
+entity.Orders ..> javax.persistence.JoinColumn
+entity.Orders ..> javax.persistence.ManyToOne
+entity.Orders ..> javax.persistence.NamedQueries
+entity.Orders ..> javax.persistence.NamedQuery
+entity.Orders ..> javax.persistence.OneToMany
+entity.Orders ..> javax.persistence.Table
+entity.Orders ..> javax.persistence.Temporal
+entity.Orders ..> javax.validation.constraints.NotNull
+entity.Orders ..> javax.xml.bind.annotation.XmlRootElement
+entity.Orders ..> javax.xml.bind.annotation.XmlTransient
+entity.Orders ..> java.util.Collection
+entity.Orders ..> java.util.Date
+entity.Orders ..> javax.persistence.CascadeType
+entity.Orders ..> javax.persistence.GenerationType
+entity.Orders ..> javax.persistence.TemporalType
+entity.Orders --|> java.io.Serializable
+entity.Product ..> java.lang.Override
+entity.Product ..> javax.persistence.Basic
+entity.Product ..> javax.persistence.Column
+entity.Product ..> javax.persistence.Entity
+entity.Product ..> javax.persistence.Id
+entity.Product ..> javax.persistence.JoinColumn
+entity.Product ..> javax.persistence.ManyToOne
+entity.Product ..> javax.persistence.NamedQueries
+entity.Product ..> javax.persistence.NamedQuery
+entity.Product ..> javax.persistence.OneToMany
+entity.Product ..> javax.persistence.Table
+entity.Product ..> javax.validation.constraints.NotNull
+entity.Product ..> javax.validation.constraints.Size
+entity.Product ..> javax.xml.bind.annotation.XmlRootElement
+entity.Product ..> javax.xml.bind.annotation.XmlTransient
+entity.Product ..> java.util.Collection
+entity.Product ..> javax.persistence.CascadeType
+entity.Product --|> java.io.Serializable
+entity.Users ..> javax.persistence.Basic
+entity.Users ..> javax.persistence.Column
+entity.Users ..> javax.persistence.Entity
+entity.Users ..> javax.persistence.Id
+entity.Users ..> javax.persistence.NamedQueries
+entity.Users ..> javax.persistence.NamedQuery
+entity.Users ..> javax.persistence.OneToMany
+entity.Users ..> javax.persistence.Table
+entity.Users ..> javax.validation.constraints.NotNull
+entity.Users ..> javax.validation.constraints.Size
+entity.Users ..> javax.xml.bind.annotation.XmlRootElement
+entity.Users ..> javax.xml.bind.annotation.XmlTransient
+entity.Users ..> java.util.Collection
+entity.Users ..> javax.persistence.CascadeType
+entity.Users --|> java.io.Serializable
+test.backingbean.LoginBackingBean ..> javax.ejb.EJB
+test.backingbean.LoginBackingBean ..> javax.enterprise.context.RequestScoped
+test.backingbean.LoginBackingBean ..> javax.enterprise.context.SessionScoped
+test.backingbean.LoginBackingBean ..> javax.inject.Named
+test.backingbean.LoginBackingBean ..> ejb.LoginSessionBean
+test.backingbean.LoginBackingBean ..> ejb.ProductListSessionBean
+test.backingbean.LoginBackingBean ..> entity.Product
+test.backingbean.LoginBackingBean ..> entity.Users
+test.backingbean.LoginBackingBean ..> java.util.List
+test.backingbean.LoginBackingBean ..> javax.faces.application.FacesMessage
+test.backingbean.LoginBackingBean ..> javax.faces.context.FacesContext
+test.backingbean.LoginBackingBean --|> java.io.Serializable
+test.backingbean.OrderBackingBean ..> javax.ejb.EJB
+test.backingbean.OrderBackingBean ..> javax.enterprise.context.RequestScoped
+test.backingbean.OrderBackingBean ..> javax.inject.Inject
+test.backingbean.OrderBackingBean ..> javax.inject.Named
+test.backingbean.OrderBackingBean ..> ejb.OrderSessionBean
+test.backingbean.OrderBackingBean ..> entity.OrderDetail
+test.backingbean.OrderBackingBean ..> entity.Orders
+test.backingbean.OrderBackingBean ..> entity.Product
+test.backingbean.OrderBackingBean ..> entity.ProductBean
+test.backingbean.OrderBackingBean ..> java.util.ArrayList
+test.backingbean.OrderBackingBean ..> java.util.Date
+test.backingbean.OrderBackingBean ..> java.util.List
+test.backingbean.ProductListBackingBean ..> javax.ejb.EJB
+test.backingbean.ProductListBackingBean ..> javax.enterprise.context.SessionScoped
+test.backingbean.ProductListBackingBean ..> javax.inject.Named
+test.backingbean.ProductListBackingBean ..> ejb.ProductListSessionBean
+test.backingbean.ProductListBackingBean ..> entity.Product
+test.backingbean.ProductListBackingBean ..> entity.ProductBean
+test.backingbean.ProductListBackingBean ..> java.util.ArrayList
+test.backingbean.ProductListBackingBean ..> java.util.List
+test.backingbean.ProductListBackingBean ..> java.util.Map
+test.backingbean.ProductListBackingBean ..> javax.faces.context.FacesContext
+test.backingbean.ProductListBackingBean --|> java.io.Serializable
+@enduml

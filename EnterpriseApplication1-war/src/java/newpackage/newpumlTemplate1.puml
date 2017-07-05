@@ -1,0 +1,25 @@
+@startuml
+class BookShelfIterator {
+  initialize(bookshelf)
+  hasNext?()
+  next()
+}
+class BookShelf {
+  initialize()
+  getBookAt(index)
+  appendBook(book)
+  getLength()
+  iterator()
+}
+class Book {
+  attr_reader :bookname
+  initialize(bookname)
+}
+
+main o--> Book : use >
+main o--> BookShelf : use >
+main o--> BookShelfIterator : use >
+BookShelfIterator o--> BookShelf
+BookShelf o--> Book
+
+@enduml

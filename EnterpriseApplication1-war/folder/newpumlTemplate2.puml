@@ -1,0 +1,40 @@
+@startuml
+
+title JDBCによるINSERT処理
+
+actor ユーザ as user
+participant "ProductUpdateDaoMain" as main
+participant "ProductUpdateDao" as dao
+participant "DBUtil" as DBUtil
+entity "ProductDto" as dto
+
+user -> main : main()メソッドの呼び出し
+activate main
+
+main -> dao : selectLikeName(String name)
+activate dao
+
+dao -> DBUtil : getConnegtion()
+activate DBUtil
+dao <-- DBUtil
+deactivate DBUtil
+
+dao -> dao : 検索の実行
+loop "検索結果件数分繰り返す"
+ dao -> dto : 検索結果をListへ格納
+ activate dto
+ dao <-- dto
+ deactivate dto
+end
+
+dao -> DBUtil : close()
+activate DBUtil
+dao <-- DBUtil
+deactivate DBUtil
+
+main <-- dao : 検索結果を返却
+deactivate dao
+
+user <-- main : 検索結果を表示
+
+@enduml
